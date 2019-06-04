@@ -1,0 +1,21 @@
+{
+    "events": [
+        { 
+            "id": 1, 
+            "title": "UFC 232", 
+            "Ciy": "Toronto", 
+            "MainCard": [{"id":1, "name": "Alexander Gustaffson", "Description":"Some description" }],
+            "promoImg": "https://ufc-video.s3.amazonaws.com/styles/background_image_xl/s3/2019-05/UFC_238_EVENT_HERO.jpg?GwDl.BDm2N77Jl0roOk9knmqzUuj2UiD&itok=R4AipfvC"
+        },
+        { "id": 2, "title": "UFC 233", "Ciy": "Moscou", "MainCard": [{"id":2, "name": "Khabib Nurmagomedov", "Description":"Some description" }] }
+    ],
+    "comments": [
+      { "id": 1, "opinions":["232: some comment about ufc 232","232: some comment#2 about ufc 232" ], "eventId": 1 },
+      { "id": 2, "opinions":["233: Comments on UFC 233","233: some comment#2 about ufc 233" ], "eventId": 2 }
+    ],
+    "fighters": [
+        {"id": 1, "name":"Alexander Gustafsson", "victories": []},
+        {"id": 2, "name":"Khabiub Nurmagomedov", "victories": []}
+    ],
+    "profile": { "name": "Ihor Khanchuk" }
+  }
