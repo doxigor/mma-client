@@ -65,3 +65,34 @@ nav a {
 @media screen and (max-width: 768px) {}
 
 
+/* Events*/
+
+@keyframes fadeIn {
+  0% { opacity:0 }
+  100% { opacity:1; }
+}
+
+.single-ufc-event {
+    animation: fadeIn 3s;
+    padding:20px;
+    margin:5px;
+    transform: scale(.98);
+    transition: all .4s ease-in-out; 
+}
+
+.single-ufc-event:hover {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  box-shadow: 5px 5px 35px 15px rgba(0,0,0,0.18);
+  cursor: pointer;
+  transform: scale(1);
+  border:none;
+}
+
+.event-fighters-info li{
+  list-style-type: none;
+}
+
+.event-fighters-info li b {
+  font-weight:bold;
+  font-size:14px;
+}

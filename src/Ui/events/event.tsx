@@ -1,5 +1,8 @@
 import React from 'react';
 import { IUFCEvent } from '../../store/types';
+import { InlineVictoriesList } from '../error/vicrories';
+import { Link } from 'react-router-dom';
+import FighterShortInfo from './fighter-short-info';
 
 interface IUfcEventProps {
     ufcEvent: IUFCEvent
@@ -7,14 +10,32 @@ interface IUfcEventProps {
 
 const UfcEventPlaceholder: React.FC<IUFCEvent> = (props: IUFCEvent) => {
 
-    const style = { border: "1px solid silver" }
+    const { title, city, card, id, promoImg } = props;
+    const style = { border: card.isChampionFight ? '1px solid gold' : '1px solid silver' }
 
     return (
-        <div className="promo page" style={style}>
-            <ul>
-                <li>Event name: {props.title}</li>
-                <li>Event city: {props.city}</li>
-            </ul>
+        <div className="single-ufc-event" style={style}>
+            <h1>{title} in {city} :: {card.fighter.name} VS {card.fighter2.name}</h1>
+            <div>
+                <ul className="event-fighters-info">
+                    <li><img src={card.fighter.img} /></li>
+                    <li><b>Significant victories:</b> <InlineVictoriesList victories={card.fighter.victories} /></li>
+                    <FighterShortInfo {...card.fighter.meta} />
+                </ul>
+            </div>
+            <div>
+                <ul className="event-fighters-info">
+                    <li><img src={card.fighter2.img} /></li>
+                    <li><b>Significant victories:</b> <InlineVictoriesList victories={card.fighter.victories} /></li>
+                    <FighterShortInfo {...card.fighter2.meta} />
+                </ul>
+            </div>
+            <Link to={{
+                pathname: `/event/${id}`,
+                state: {
+                    id: id
+                }
+            }}>Visit Event</Link>
         </div>
     );
 }

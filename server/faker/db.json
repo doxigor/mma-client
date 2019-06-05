@@ -3,47 +3,92 @@
         { 
             "id": 1, 
             "title": "UFC 219", 
-            "city": "Toronto", 
+            "city": "Toronto",
+            "date" : 1565014919329,
+            "weight": "Light Heavyweight",
             "card": {
                     "fighter": {
-                        "name": "Alexander Gustafsson",
+                        "name": "Henry Tsehudo",
                         "id": 1,
                         "victories": [ "Daniel Cormie", "Jason X"],
-                        "isChampion": false
+                        "isChampion": false,
+                        "meta": {
+                            "record": "13-2-1",
+                            "lastFight": "win",
+                            "country": "South Korea",
+                            "height": "5'11",
+                            "weight": "145.00 LB",
+                            "reach": "72 in",
+                            "legReach": "42.5"    
+                        },
+                        "img": "http://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2019-01/CEJUDO_HENRY.png?wqSlJk2ePaIZK.lH.e5bEjpPfk_.balg&itok=XW62QTp1"
                     },
                     "fighter2": {
-                        "name": "Alexander Gustafsson",
+                        "name": "Marlon Moraes",
                         "id": 1,
                         "victories": [ "Daniel Cormie", "Jason X"],
-                        "isChampion": true
+                        "isChampion": 1,
+                        "meta": {
+                            "record": "18-4-0",
+                            "lastFight": "win",
+                            "country": "Brazil",
+                            "height": "5'14",
+                            "weight": "145.00 LB",
+                            "reach": "72 in",
+                            "legReach": "42.5"    
+                        },
+                        "img": "http://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/image/fighter_images/Marlon_Moraes/MORAES_MARLON.png?nermP2xPg5JOIdv72Ts8FPgf3.bpI74g&itok=0x2fJ22X"
                     },
                     "rounds": 5,
-                    "isChampionFight": true
+                    "isChampionFight": 1
                 },
             "promoImg": "https://ufc-video.s3.amazonaws.com/styles/background_image_xl/s3/2019-05/UFC_238_EVENT_HERO.jpg?GwDl.BDm2N77Jl0roOk9knmqzUuj2UiD&itok=R4AipfvC"
         },
         { 
             "id": 1, 
-            "title": "UFC 232", 
-            "city": "Toronto", 
+            "title": "UFC 219", 
+            "city": "Toronto",
+            "date" : 1565014919329,
+            "weight": "Light Heavyweight",
             "card": {
                     "fighter": {
-                        "name": "Alexander Gustafsson",
+                        "name": "Henry Tsehudo",
                         "id": 1,
                         "victories": [ "Daniel Cormie", "Jason X"],
-                        "isChampion": false
+                        "isChampion": false,
+                        "meta": {
+                            "record": "13-2-1",
+                            "lastFight": "win",
+                            "country": "South Korea",
+                            "height": "5'11",
+                            "weight": "145.00 LB",
+                            "reach": "72 in",
+                            "legReach": "42.5"    
+                        },
+                        "img": "http://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2019-01/CEJUDO_HENRY.png?wqSlJk2ePaIZK.lH.e5bEjpPfk_.balg&itok=XW62QTp1"
                     },
                     "fighter2": {
-                        "name": "Alexander Gustafsson",
+                        "name": "Marlon Moraes",
                         "id": 1,
                         "victories": [ "Daniel Cormie", "Jason X"],
-                        "isChampion": true
+                        "isChampion": 1,
+                        "meta": {
+                            "record": "18-4-0",
+                            "lastFight": "win",
+                            "country": "Brazil",
+                            "height": "5'14",
+                            "weight": "145.00 LB",
+                            "reach": "72 in",
+                            "legReach": "42.5"    
+                        },
+                        "img": "http://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/image/fighter_images/Marlon_Moraes/MORAES_MARLON.png?nermP2xPg5JOIdv72Ts8FPgf3.bpI74g&itok=0x2fJ22X"
                     },
                     "rounds": 5,
-                    "isChampionFight": true
+                    "isChampionFight": 1
                 },
             "promoImg": "https://ufc-video.s3.amazonaws.com/styles/background_image_xl/s3/2019-05/UFC_238_EVENT_HERO.jpg?GwDl.BDm2N77Jl0roOk9knmqzUuj2UiD&itok=R4AipfvC"
         }
+      
 
     ],
     "comments": [
