@@ -1,3 +1,5 @@
+import { Action } from "redux";
+
 // Describing the shape of the system's slice of state
 export interface IUFCFighter {
   name: string;
@@ -27,8 +29,7 @@ export interface IUFCEvents {
 }
 
 export interface IEventsAction {
-    id: number,
-    type?: string,
+    type: string,
     payload?: any
   }
 
@@ -48,6 +49,13 @@ export interface IGenericAction {
 }
   
 export const LOAD_EVENTS = "LOAD_EVENTS";
-export const LOAD_EVENT = "LOAD_EVENTS";
+export const LOAD_EVENT = "LOAD_EVENT";
+export const HTTP_ERROR = "HTTP_LOADING_ERROR";
 export const LOAD_FIGHTER = "LOAD_FIGHTER";
 export const LOAD_CARD = "LOAD_CARD";
+
+export interface LOAD_EVENTS extends Action<'LOAD_EVENTS'> {
+  result: IUFCEvent[];
+}
+
+export type EventsActions = | LOAD_EVENTS;

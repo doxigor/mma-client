@@ -1,36 +1,42 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { connect } from "react-redux";
-import { getEvents, eventsReducer } from './../../store/EventsReducer'; 
+import { getEvents } from './../../store/EventsReducer';
 
-//import { Dispatch } from 'redux';
 import { ThunkDispatch } from 'redux-thunk'
+import { Container, Typography } from '@material-ui/core';
+import ErrorInfos from '../../Ui/error';
+import UfcEventsPlaceholder from '../../Ui/events/events';
+
 const Events: React.FC = (props: any) => {
 
-  useEffect( () => {
+  useEffect(() => {
     props.getEvents();
   }, []);
-
+  
   return (
     <div className="page">
-        <h1>Events *</h1>
-        {
-          props.events.length ? <h2>{props.events[0].title}</h2> : <h2>Loading...</h2>
-        }
-         {
-          props.events.error ? <h2>Some error</h2> : null
-        }
+      <React.Fragment>
+        <Container maxWidth="xl">
+          <Typography component="div">
+            <h1>Events</h1>
+            <UfcEventsPlaceholder ufcEvents={props.events} />
+            <ErrorInfos genericError={props.error} />
+          </Typography>
+        </Container>
+      </React.Fragment>
     </div>
   );
 }
 
-const mapStateToProps = (state:any) => ({
-    events:  state.events.events
-  });
+const mapStateToProps = (state: any) => ({
+  events: state.events.events,
+  eventsError: state.events.error
+});
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, any>) => ({
-  getEvents: ()=> dispatch(getEvents())
-});  
-  
+  getEvents: () => dispatch(getEvents())
+});
+
 export default connect(
-    mapStateToProps, mapDispatchToProps
-  )(Events);
+  mapStateToProps, mapDispatchToProps
+)(Events);

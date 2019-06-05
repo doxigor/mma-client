@@ -1,13 +1,27 @@
-
-import { ThunkAction, ThunkDispatch } from 'redux-thunk';
-import { Dispatch } from 'redux';
-import { ActionCreator } from 'redux';
-
-import { IUFCEvents,IUFCEvent, LOAD_EVENTS, IEventsAction } from './types';
+import { Dispatch, Reducer } from 'redux';
+import { IUFCEvents,IUFCEvent, LOAD_EVENTS, IEventsAction, HTTP_ERROR, EventsActions } from './types';
+import { IHttpResponse, http } from '../core/http';
+import { apiRoutes } from '../core/api-routes';
 
 const initialState: IUFCEvents = {
-    events: []
+    events: [],
+    error:''
 };
+
+// export const eventsReducerNew: Reducer<IUFCEvents, EventsActions> = 
+// (
+//   state = initialState,
+//   action
+// ) => {
+//   switch (action.type) {
+//     case LOAD_EVENTS: {
+//       return {};
+//      }
+    
+//     default:
+//       return state;
+//   }
+// };
 
 export function eventsReducer(state = initialState, action: IEventsAction): IUFCEvents {
   switch (action.type) {
@@ -17,8 +31,7 @@ export function eventsReducer(state = initialState, action: IEventsAction): IUFC
         events: [...action.payload]
       }; 
     }
-    case "ERROR_ON_EVENTS": {
-      console.log("error");
+    case HTTP_ERROR: {
       return {
         ...state,
         error: "loading error"
@@ -32,25 +45,13 @@ export function eventsReducer(state = initialState, action: IEventsAction): IUFC
 
 export const getEvents = () => {
   return async (dispatch: Dispatch<any>): Promise<any> => {
-  //     const response = await fetch('http://localhost:3000/events');
-  //     const data = await response.json();
-  //     return dispatch({
-  //       type:LOAD_EVENTS,
-  //       payload: data
-  //     });
-  // }
-
-
-
-  fetch('http://localhost:3000/events')
-  .then(response => response.json())
-    .then(data => dispatch({
-        type: LOAD_EVENTS,
-        payload: data
-      }))
-    .catch(error => dispatch({
-        type: "ERROR_ON_EVENTS",
+    let response: IHttpResponse<IUFCEvent[]>;
+    try {
+      response = await http<IUFCEvent[]>(apiRoutes.eventsPage);
+      dispatch({ type: LOAD_EVENTS, payload: response.parsedBody
       })
-    );
+    } catch (response) {
+      dispatch({type: HTTP_ERROR})
+    }
   }
-};
+}
