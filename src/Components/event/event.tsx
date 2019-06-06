@@ -1,23 +1,35 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useFetchEvent } from '../../core/helpers';
+import { apiRoutes } from '../../core/api-routes';
+import { IUFCEvent } from '../../store/types';
+
 interface ISingleEventProps {
-    match:{
+    match: {
         params: {
-            id:number
+            id: number
         }
     }
 }
 
 const SingleEvent: React.FC<ISingleEventProps> = (props: ISingleEventProps) => {
 
-//   useEffect(() => {
-//     props.getEvents();
-//   }, []);
+    const event: any = useFetchEvent(apiRoutes.eventPage(props.match.params.id.toString()));
+    const loadedEvent = (event: IUFCEvent) => {
+        const { title } = event;
+        return (
+            <div>
+                Event {title} is loaded!
+        </div>
+        )
+    }
 
-  return (
-    <div className="page">
-        <h1>Single Event</h1>
-    </div>
-  );
+    return (
+        <div className="page">
+            {
+                event ? loadedEvent(event) : null
+            }
+        </div>
+    );
 }
 
 export default SingleEvent;

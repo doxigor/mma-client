@@ -46,8 +46,8 @@
         },
         { 
             "id": 1, 
-            "title": "UFC 219", 
-            "city": "Toronto",
+            "title": "UFC 220", 
+            "city": "Berlin",
             "date" : 1565014919329,
             "weight": "Light Heavyweight",
             "card": {
