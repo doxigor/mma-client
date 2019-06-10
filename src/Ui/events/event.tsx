@@ -15,7 +15,9 @@ const UfcEventPlaceholder: React.FC<IUFCEvent> = (props: IUFCEvent) => {
 
     return (
         <div className="single-ufc-event" style={style}>
-            <h1>{title} in {city} :: {card.fighter.name} VS {card.fighter2.name}</h1>
+            <div className="ufc-event-title">
+                <h1>{title} in {city} :: {card.fighter.name} VS {card.fighter2.name}</h1>
+            </div>
             <div>
                 <ul className="event-fighters-info">
                     <li><img src={card.fighter.img} /></li>
@@ -23,6 +25,7 @@ const UfcEventPlaceholder: React.FC<IUFCEvent> = (props: IUFCEvent) => {
                     <FighterShortInfo {...card.fighter.meta} />
                 </ul>
             </div>
+            <div className="ufc-event-vs"> Light weight </div>
             <div>
                 <ul className="event-fighters-info">
                     <li><img src={card.fighter2.img} /></li>
@@ -30,12 +33,17 @@ const UfcEventPlaceholder: React.FC<IUFCEvent> = (props: IUFCEvent) => {
                     <FighterShortInfo {...card.fighter2.meta} />
                 </ul>
             </div>
-            <Link to={{
-                pathname: `/event/${id}`,
-                state: {
-                    id: id
-                }
-            }}>Visit Event</Link>
+            <div className="ufc-event-visit-link">
+                <Link to={{
+                    pathname: `/event/${id}`,
+                    state: {
+                        id: id
+                    }
+                }}>
+                    Visit Event
+                </Link>
+            </div>
+            
         </div>
     );
 }

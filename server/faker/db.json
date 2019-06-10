@@ -25,7 +25,7 @@
                     },
                     "fighter2": {
                         "name": "Marlon Moraes",
-                        "id": 1,
+                        "id": 2,
                         "victories": [ "Daniel Cormie", "Jason X"],
                         "isChampion": 1,
                         "meta": {
@@ -96,8 +96,67 @@
       { "id": 2, "opinions":["233: Comments on UFC 233","233: some comment#2 about ufc 233" ], "eventId": 2 }
     ],
     "fighters": [
-        {"id": 1, "name":"Alexander Gustafsson", "victories": []},
-        {"id": 2, "name":"Khabiub Nurmagomedov", "victories": []}
+        {
+            "id": 1, 
+            "name":"Henry Tsehudo", 
+            "record": "15-0-1",
+            "lastFight": 1,
+            "country": "South Korea",
+            "height": "5.11",
+            "weight": 155,
+            "reach": 120,
+            "legReach": 160,
+            "wins": {
+                "ko_tko": 10,
+                "sub": 3,
+                "dec": "54",
+                "avgFightTime": 11,
+                "knockDownAttempt": 2
+            },
+            "significantStrikes": {
+               "landedPerMinute": 15,
+                "significantStrikes": 10,
+                "absorbedPerMinute": 16,
+                "defense": 60
+            },
+            "grappling": {
+                "takedownAvg": 2,
+                "takedownAcc": 0.6,
+                "takedownDefence": 1,
+                "submissionAvg": 1
+            }
+        },
+        {
+            "id": 2,
+            "name":"Marlon Moraes", 
+            "record": "15-0-1",
+            "lastFight": 1,
+            "country": "South Korea",
+            "height": "5.11",
+            "weight": 155,
+            "reach": 120,
+            "legReach": 160,
+            "wins": {
+                "ko_tko": 10,
+                "sub": 3,
+                "dec": "54",
+                "avgFightTime": 11,
+                "knockDownAttempt": 2
+            },
+            "significantStrikes": {
+               "landedPerMinute": 15,
+                "significantStrikes": 10,
+                "absorbedPerMinute": 16,
+                "defense": 60
+            },
+            "grappling": {
+                "takedownAvg": 2,
+                "takedownAcc": 0.6,
+                "takedownDefence": 1,
+                "submissionAvg": 1
+            }
+        }
+ 
     ],
     "profile": { "name": "Ihor Khanchuk" }
   }

@@ -10,7 +10,7 @@ interface IUfcEventsProps {
 const UfcEventsPlaceholder: React.FC<IUfcEventsProps> = (props: IUfcEventsProps) => {
     const noEvents = () => (<><h2>Sorry, no events at this time</h2></>);
     const loaddedEvents = (events: IUFCEvent[]) => (
-        <div>
+        <div className="ufc-events">
             <h1>Actual UFC events</h1>
             {events.map( event => {
                 const id:string = idGenerator();
