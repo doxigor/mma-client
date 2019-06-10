@@ -30,7 +30,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha -w -r ts-node/register -r babel-register.js -r ignore-styles -r setup.js src/tests/*.spec.tsx",
-    "jest": "jest",
+    "jest": "react-scripts test",
     "eject": "react-scripts eject",
     "server:faker:run": "json-server --watch server/faker/db.json"
   },

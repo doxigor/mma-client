@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Pie, Doughnut } from 'react-chartjs-2';
 import { BarChart, Bar as RechartBar } from 'recharts'
 
 interface IChart {
@@ -10,20 +10,53 @@ interface IChart {
 }
 
 interface IRadialChart extends IChart {
-    label: string;
+    label?: string;
 }
 
 const CircleChart: React.FC<IRadialChart> = (props: IRadialChart) => {
     const { label, a, b, width, height } = props;
     const defaultStyle = {
-        width: "40px",
-        height: "40px"
+        width: "70px",
+        height: "70px"
     };
     const defaultData = {
         datasets: [{
             backgroundColor: [
-                'rgba(255, 0, 0, 1',
-                'rgba(0, 229, 255, 1)'
+                'rgba(0, 229, 255, 1)',
+                'rgba(255, 0, 0, 1'
+            ],
+            data: [a, b],
+        }]
+    }
+
+
+    const pieChartOptions = {
+        maintainAspectRatio: true,
+        legend: {
+            display: false,
+        }
+    }
+
+    return (
+        <div style={defaultStyle}>
+            <h3>{label}</h3> 
+            <Pie data={defaultData} options={pieChartOptions} width={60} height={60} redraw />
+        </div>
+
+    );
+}
+
+const DoughnutChart: React.FC<IRadialChart> = (props: IRadialChart) => {
+    const { label, a, b, width, height } = props;
+    const defaultStyle = {
+        width: "70px",
+        height: "70px"
+    };
+    const defaultData = {
+        datasets: [{
+            backgroundColor: [
+                'rgba(0, 229, 255, 1)',
+                'rgba(255, 0, 0, 1'
             ],
             data: [a, b],
         }]
@@ -38,8 +71,8 @@ const CircleChart: React.FC<IRadialChart> = (props: IRadialChart) => {
 
     return (
         <div style={defaultStyle}>
-            <h3>{label}</h3>
-            <Pie data={defaultData} width={width || 20} height={height || 20} redraw />
+            <h3>{label}</h3> 
+            <Doughnut data={defaultData} width={60} height={60} redraw />
         </div>
 
     );
@@ -55,12 +88,12 @@ const SingleBarChart: React.FC<IChart> = (props: IChart) => {
     return (
         <div>
             <BarChart width={100 || width} height={height || 60} data={data}>
-                <RechartBar dataKey="pv" fill="#f44242" />
-                <RechartBar dataKey="uv" fill="#41d3f4" />
+                <RechartBar dataKey="pv" fill="#41d3f4" />
+                <RechartBar dataKey="uv" fill="#f44242" />
             </BarChart>
         </div>
 
     );
 }
 
-export { SingleBarChart, CircleChart };
+export { SingleBarChart, CircleChart, DoughnutChart };

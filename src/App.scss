@@ -135,3 +135,77 @@ nav a {
     font-size: 14px;
   }
 }
+
+.fighter-info {
+  .stat-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+  }
+
+  .fighter-summary-record-row {
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: space-evenly;
+    border-bottom:1px solid #f5f1f1;
+    padding:2px 0 2px 0;
+    font-weight:bold;
+    
+    div {
+      margin: 5px 0 5px 0;
+    }
+  }
+
+  div.bottom-margin {
+    margin-bottom:150px;
+  }
+
+  .fighter-prop-description {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size:13px;
+    color: #51555b;
+  }
+
+  .red {
+    color: #f40707;
+  }
+
+  .bif {
+    font-weight:bold;
+    font-size:24px;
+  }
+
+  .medium-bif {
+    font-weight:bold;
+    font-size:16px;
+  }
+
+  .style-bif {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .huge-bif {
+    font-size: 38px;
+    font-weight: bold;
+  }
+
+  .blue {
+    color: #078fb2;
+  }
+
+  .fighter-general-record{
+    .fighter-caption {
+      font-size:48px;
+      font-weight:bold;
+      font-style: italic;
+      border-bottom:10px solid black;
+    }
+  }
+  .fighter-small-record-table {
+    animation: appear 2s ease-in-out forwards;
+  }
+}

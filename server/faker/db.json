@@ -107,15 +107,15 @@
             "reach": 120,
             "legReach": 160,
             "wins": {
-                "ko_tko": 10,
-                "sub": 3,
-                "dec": "54",
+                "ko_tko": 14,
+                "sub": 4,
+                "dec": 4,
                 "avgFightTime": 11,
                 "knockDownAttempt": 2
             },
             "significantStrikes": {
-               "landedPerMinute": 15,
-                "significantStrikes": 10,
+               "landedPerMinute":6,
+                "significantStrikes": 14,
                 "absorbedPerMinute": 16,
                 "defense": 60
             },
@@ -123,7 +123,7 @@
                 "takedownAvg": 2,
                 "takedownAcc": 0.6,
                 "takedownDefence": 1,
-                "submissionAvg": 1
+                "submission": 1
             }
         },
         {
@@ -144,16 +144,16 @@
                 "knockDownAttempt": 2
             },
             "significantStrikes": {
-               "landedPerMinute": 15,
+               "landedPerMinute": 11,
                 "significantStrikes": 10,
                 "absorbedPerMinute": 16,
-                "defense": 60
+                "defense": 44
             },
             "grappling": {
                 "takedownAvg": 2,
-                "takedownAcc": 0.6,
-                "takedownDefence": 1,
-                "submissionAvg": 1
+                "takedownAcc": 2,
+                "takedownDefence": 0.4,
+                "submission": 3
             }
         }
  

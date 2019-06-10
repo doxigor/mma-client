@@ -6,7 +6,7 @@ import Events from './Components/events/events';
 import Fighters from './Components/fighters/fighters';
 import Main from './Components/main/Main';
 import Menu from './Ui/menu/Menu';
-import SingleEvent from './Components/event/event';
+import SingleEvent from './Components/event/single-event';
 
 const App: React.FC = (props: any) => {
 

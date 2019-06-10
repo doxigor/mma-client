@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { IHttpResponse, httpGet } from '../http';
+import { httpGet } from '../http';
 import { IUFCEvent, IUFCFighterInfo } from '../../store/types';
 import { apiRoutes } from '../api-routes';
 

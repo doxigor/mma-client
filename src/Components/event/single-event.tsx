@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useFetchEvent } from "../../core/helpers";
 import { IUFCEvent, IUFCFighterInfo } from "../../store/types";
 import { SingleBarChart, CircleChart } from "../../Ui/charts";
+import { FightersRecord } from "../../Ui/records";
+import { Container, Typography } from "@material-ui/core";
 
 interface ISingleEventProps {
   match: {
@@ -21,16 +23,21 @@ const SingleEvent: React.FC<ISingleEventProps> = (props: ISingleEventProps) => {
   ) => {
     const { title } = event;
     return (
-      <div>
-        Event {title} is loaded!
-        <div>
-          <span>
-            {fighter.name} VS {fighter2.name}
-          </span>{" "}
-          <SingleBarChart a={10} b={2} />
-          <CircleChart a={15} b={25} label={"TKO"} />
-        </div>
-      </div>
+      <div className="page">
+      <React.Fragment>
+        <Container maxWidth="lg">
+          <Typography component="div">
+            <h1>Events</h1>
+            <div>
+              <div className="single-event-page">
+                <FightersRecord fighter1={fighter} fighter2={fighter2}/>
+                <span>{fighter.name} VS {fighter2.name}</span>
+              </div>
+            </div>
+          </Typography>
+        </Container>
+      </React.Fragment>
+    </div>
     );
   };
 
