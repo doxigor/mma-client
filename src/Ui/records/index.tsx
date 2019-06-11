@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { IUFCFighterInfo } from '../../store/types';
 import { SingleBarChart, CircleChart, DoughnutChart } from '../charts';
-interface IFightersRecorder{
+export interface IFightersRecorder{
     fighter1: IUFCFighterInfo,
     fighter2: IUFCFighterInfo
 }
@@ -9,6 +9,7 @@ interface IFightersRecorder{
 interface FighterRecordSummary extends IFightersRecorder{};
 
 const FightersRecordSummary: React.FC<IFightersRecorder> = (props: IFightersRecorder) => {
+    console.log(JSON.stringify(props));
     const f1:IUFCFighterInfo = props.fighter1;
     const f2:IUFCFighterInfo = props.fighter2;
     return (
@@ -210,4 +211,4 @@ const FightersRecord: React.FC<IFightersRecorder> = (props: IFightersRecorder) =
     );
 }
 
-export { FightersRecord }
+export { FightersRecord,  FightersGreppling }
